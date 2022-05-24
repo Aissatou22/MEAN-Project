@@ -1,0 +1,54 @@
+<div class="col">
+  <div class="card">
+    <div class="image">
+      <img [src]="lienPhoto"/>
+    </div>
+    <div class="card-inner">
+      <div class="header">
+        <h5>{{nom | truncate : 16 : '…' }}</h5>
+        <div>
+          <h6 [innerHTML]="prixNeuf" style="display: inline-block;"></h6>
+          <h6 style="display: inline-block;">&nbsp;€</h6>
+        </div>
+      </div>
+      <div class="content">
+        <p [innerHTML]="descriptif"></p>
+      </div>
+      <div>
+      <button style="display: inline-block;width: 49%;margin: 1px;" type="button" class="btn btn-primary b1" data-toggle="modal" data-target="#myModalEmprunt" [id]="idBien" [disabled]="hide">Emprunter</button>
+      <button style="display: inline-block;width: 49%;margin: 1px;" type="button" class="btn btn-alert b1" data-toggle="modal" data-target="#myModalSuppression" [id]="idBien" [disabled]="hideS">Supprimer</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+    <div class="modal fade" id="myModalEmprunt" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="{{'btn-emprunt-'+idB}}" class="btn btn-alert" data-dismiss="modal">Emprunter</button>
+            <button type="button" id="btn-annuler" class="btn btn-alert" data-dismiss="modal" aria-label="Close">Annuler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="myModalSuppression" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="{{'btn-suppression-'+idB}}"  class="btn btn-alert" data-dismiss="modal">Supprimer</button>
+            <button type="button" class="btn btn-alert" data-dismiss="modal" aria-label="Close">Annuler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+

@@ -1,0 +1,34 @@
+<div class="content-body">
+<h4 id = "textConn">Connexion</h4>
+<div class="row" style="margin-left: 20%;margin-top: 80px;">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h6 id = "textErr" class="alert alert-success" role="alert" *ngIf="isIsn" style="width: 75%;"><strong>Connexion en cours...</strong></h6>
+        <form #f="ngForm" (ngSubmit)="signUp(f)">
+            <div class="form-group">
+                <input type="email" placeholder="exemple@ex.com" id="email" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="email" ngModel required>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Mot de passe" id="mdp" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="mdp" ngModel required minlength="4">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Nom" id="nom" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="nom" ngModel required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Prénom" id="prenom" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="prenom" ngModel required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Ville" id="ville" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="ville" ngModel required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Adresse postale" id="adresse" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="adresse" ngModel required minlength="4">
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Téléphone" id="telephone" pattern="[0-9]{10}" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="telephone" ngModel required>
+            </div>
+            <button class="connect" type="submit" [disabled]="f.invalid">Inscription</button>      
+        </form>
+        <a routerLink="">Déjà inscrit ?</a>
+        <h6 id = "textErr" class="alert alert-danger" role="alert" *ngIf="isErreur" style="width: 75%;"><strong>Une erreur s'est produite.</strong> Vérifier vos identifiants!!!</h6>
+    </div>
+  </div>
+</div>

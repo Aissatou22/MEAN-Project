@@ -1,0 +1,32 @@
+<button class="connect" 
+        style="float: right;background-color: rgb(235, 232, 223);
+            border: 1px solid rgb(219, 194, 119);
+            border-radius: 1.5px;
+            width: 25%;
+            height: 30px;" 
+    type="submit" (click)="signOut()" *ngIf="dec">Déconnexion</button>
+<div class="content-body">
+  <h4 id = "textConn">Ajout</h4>
+  <div class="row" style="margin-left: 20%;margin-top: 80px;">
+      <div class="col-sm-8 col-sm-offset-2">
+          <!--<h6 id = "textErr" class="alert alert-success" role="alert" *ngIf="isIsn" style="width: 75%;"><strong>Connexion en cours...</strong></h6>-->
+          <form #f="ngForm" (ngSubmit)="ajouter(f)">
+              <div class="form-group">
+                <input type="text" placeholder="Nom" id="nom" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="nom" ngModel required>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Description" id="descriptif" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="descriptif" ngModel required>
+              </div>
+              <div class="form-group">
+                <input type="url" placeholder="Lien photo" id="lienPhoto" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="lienPhoto" ngModel required>
+              </div>
+              <div class="form-group">
+                <input type="number" placeholder="Prix Neuf" id="prixNeuf" maxlength="6" style="border-top: 0px;border-left: 0px;border-right: 0px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: rgb(219, 194, 119); width: 75%;" class="form-control" name="prixNeuf" ngModel required>
+              </div>
+              <button class="connect" type="submit" [disabled]="f.invalid">Ajouter</button>      
+          </form>
+          <h6 id = "textErr" class="alert alert-danger" role="alert" *ngIf="isErreur" style="width: 75%;"><strong>Une erreur s'est produite.</strong></h6>
+          <h6 id = "textErr" class="alert alert-danger" role="alert" *ngIf="articleAdded" style="width: 75%;"><strong>Article ajouté.</strong></h6>
+      </div>
+    </div>
+  </div>

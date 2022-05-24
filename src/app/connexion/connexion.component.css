@@ -1,0 +1,28 @@
+#textConn{
+    background-color: rgb(219, 194, 119);
+    position: relative;
+    margin: auto;
+    font-size: x-large;
+    width: 115px;
+    animation-name: texte;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+/*@keyframes texte {
+    0%   {background-color: dodgerblue;color: aliceblue;}
+    50%  {background-color: aliceblue;color: dodgerblue;}
+    100% {background-color: dodgerblue;color: aliceblue;}
+}*/
+
+.connect{
+    margin: auto;
+    background-color: rgb(235, 232, 223);
+    border: 1px solid rgb(219, 194, 119);
+    border-radius: 1.5px;
+    width: 25%;
+    height: 30px;
+}
+
+.connect:hover{
+    background-color: rgb(219, 194, 119);
+}

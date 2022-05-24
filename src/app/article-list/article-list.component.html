@@ -1,0 +1,22 @@
+<button class="connect" 
+        style="float: right;background-color: rgb(235, 232, 223);
+            border: 1px solid rgb(219, 194, 119);
+            border-radius: 1.5px;
+            width: 25%;
+            height: 30px;" 
+    type="submit" (click)="signOut()" *ngIf="dec">Déconnexion</button>
+<div class="content-body">
+  <div class="search" style="margin-top: 3px;">
+    <i class="fa fa-search" style="display: inline-block;"></i><input class="form-control" style="display: inline-block;width: 60%;" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Rechercher">
+    <select name="choix" id="choix" style="display: inline-block;" [(ngModel)]="choix" >
+      <option value="emprunt" selected="selected">Emprunter</option>
+      <option value="suppression" >Supprimer</option>
+  </select>
+</div><br>
+<div class="row">
+  <app-article class="art" *ngFor="let article of (articles | filter:searchText:choix)"
+    [article]="article">
+  </app-article>
+</div>
+<h6 id = "textErr" class="textErr" *ngIf="isArtEmpty" style="width: 75%;text-align: center;">Aucun bien disponible!!!</h6>
+</div>
